@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Transaction extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['customer_id','invoice_no','date','amount','status'];
 
     public function customer()
     {

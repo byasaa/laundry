@@ -9,7 +9,7 @@
         </h1>
     </div>
     <div class="row">
-        <div class="col-12 col-sm-8">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Transaksi</h3>
@@ -33,6 +33,7 @@
                         </div>
                     @endif
                     <div class="row">
+                        <form action="{{ route('transaction.store') }}" method="post">
                         <div class="col-12">
                             @csrf
                             <div class="form-group">
@@ -45,7 +46,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label class="form-label">Product</label>
-                                        <select name="product_id[]" id="product_id[]" class="form-control">
+                                        <select name="product_id[]" id="product_id[]" class="form-control product">
                                             @foreach (App\Product::get() as $row)
                                     <option value="{{$row->id}}">{{$row->name}}</option>
                                 @endforeach
@@ -70,6 +71,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-gorup">
+                                    <button type="submit" class="btn btn-primary shadow-sm">Simpan</button>
+                                    <a class="btn btn-light shadow-sm" href="{{route('transaction.index')}}">Batal</a>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -102,7 +112,7 @@
                                search : params.term
                            }
                        },
-                       processResult : function (response) {
+                       processResults : function (response) {
                            var results = [];
                            $.each(response, function(index, data) {
                                 results.push({

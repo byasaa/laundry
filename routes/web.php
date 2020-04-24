@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/customer/getCustomer', 'CustomerController@getCustomer')->name('customer.getCustomer');
+Route::get('/transaction/export', 'TransactionController@export')->name('transaction.export');
 
 Route::group(['middleware' => ['auth', 'hasRole:admin']], function () {
     Route::get('/home', 'HomeController@index')->name('home');

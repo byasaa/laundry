@@ -15,7 +15,6 @@
                     <h3 class="card-title">List Transaksi</h3>
                     <div class="card-options">
                         <a href="{{ route('transaction.export') }}" class="btn btn-primary btn-sm ml-2" download="true">Export</a>
-                        <a href="#!cetak" class="btn btn-outline-primary btn-sm ml-2" id="mass-cetak">Cetak</a>
                     </div>
                 </div>
                 <div class="table-responsive">
