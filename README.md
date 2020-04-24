@@ -17,7 +17,7 @@ Laravel 7.x menggunakan PHP versi 7.2. Kemungkinan akan ada kesalahan di beberap
 git clone https://github.com/byasaa/laundry.git
 ```
 
-2. Pada cmd, pindah ke folder prognet8 contohnya
+2. Pada cmd, pindah ke folder laundry contohnya
 
 ```
 cd c:/xampp/htdocs/laundry
@@ -29,7 +29,7 @@ lalu instal composer
 composer install
 ```
 
-3. Edit pengaturan database di file `.env`, juga masukkan perintah ini untuk mengisi `APP_KEY`
+3. Edit pengaturan database di file `.env`, juga masukkan perintah ini untuk mengisi `APP_KEY`lau
 
 ```
 php artisan key:generate
