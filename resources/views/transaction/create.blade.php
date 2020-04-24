@@ -46,7 +46,9 @@
                                     <div class="form-group">
                                         <label class="form-label">Product</label>
                                         <select name="product_id[]" id="product_id[]" class="form-control">
-                                            <option value=""></option>
+                                            @foreach (App\Product::get() as $row)
+                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -77,6 +79,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/select2-bootstrap.min.css') }}">
 @endsection
 @section('js')
     <script>
@@ -118,7 +121,7 @@
                 $(selector).select2({
                     dropdownParent : $(parent),
                     theme : 'bootstrap'
-                })
+                });
             }
 
             customer_select('.customer', 'body', '{!! route('customer.getCustomer') !!}');
@@ -149,6 +152,7 @@
                 '<a href="#" class="btn btn-danger" id="remove_form"><i class="fa fa-times"></i></a>'+
             '</div>'+
             '</div>').appendTo('.add_product');
+            product_select('.product','body');
         $('.harga').mask('9999999999',{placeholder: 'Harus Angka'});
     });
             $('body').on('click','#remove_form',function(e){
