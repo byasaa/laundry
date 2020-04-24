@@ -130,9 +130,8 @@ class CustomerController extends Controller
     }
     public function getCustomer(Request $request){
         if ($request->has('search')) {
-            // $cari = $request->search;
-            // $data = $this->customer->where('name', 'LIKE', '%'.$cari.'%')->get();
-            $data = [1,2];
+            $cari = $request->search;
+    		$data = $this->customer->where('name', 'LIKE', '%'.$cari.'%')->get();
             return response()->json($data);
     	}
     }
