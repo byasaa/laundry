@@ -131,7 +131,7 @@ class CustomerController extends Controller
     public function getCustomer(Request $request){
         if ($request->has('search')) {
             $cari = $request->search;
-    		$data = $this->customer->where('name', 'LIKE', '%'.$cari.'%')->get();
+    		$data = Customer::where('name', 'LIKE', '%'.$cari.'%')->get();
             return response()->json($data);
     	}
     }

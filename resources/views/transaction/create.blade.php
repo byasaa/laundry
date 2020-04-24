@@ -94,6 +94,7 @@
                    dropdownParent : $(parent),
                    ajax: {
                        dataType : 'json',
+                       type : 'GET',
                        url : url,
                        delay :200,
                        data : function(params){

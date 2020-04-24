@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/customer/getCustomer', 'CustomerController@getCustomer')->name('customer.getCustomer');
+
 Route::group(['middleware' => ['auth', 'hasRole:admin']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resources([
@@ -23,7 +25,6 @@ Route::group(['middleware' => ['auth', 'hasRole:admin']], function () {
 });
 
 Route::group(['middleware' => ['auth', 'hasRole:admin,kasir']], function () {
-    Route::get('/customer/getCustomer', 'CustomerController@getCustomer')->name('customer.getCustomer');
     Route::get('/transaction/export', 'TransactionController@export')->name('transaction.export');
     Route::resource('transaction', 'TransactionController');
 });
