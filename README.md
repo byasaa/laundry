@@ -14,7 +14,7 @@ Laravel 7.x menggunakan PHP versi 7.2. Kemungkinan akan ada kesalahan di beberap
 1. Clone repository, bisa di download .zip atau dengan perintah git clone seperti ini
 
 ```
-git clone https://github.com/laundry.git
+git clone https://github.com/byasaa/laundry.git
 ```
 
 2. Pada cmd, pindah ke folder prognet8 contohnya
